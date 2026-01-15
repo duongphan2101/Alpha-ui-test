@@ -1,0 +1,135 @@
+.main-header {
+    padding: 12px;
+    text-align: center;
+}
+
+.header-logo {
+    display: block;
+    max-width: 160px;
+    margin: auto;
+}
+
+.main-content {
+    padding: 32px 0;
+}
+
+.content-page {
+    margin: 0 auto;
+    padding: 0 3.125rem;
+}
+
+.content-page_container {
+    width: 1240px;
+    display: flex;
+    gap: 64px;
+}
+
+.product-images_1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.product-images_1 .product-images_1_mainImg {
+    object-fit: cover;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-images_1_badge {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 100%;
+    max-width: 120px;
+    display: block;
+}
+
+.product-images_1_nutrition-info {
+    position: absolute;
+    bottom: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1.2em;
+    max-width: 290px;
+    padding: 8px 24px;
+    background: #ffffffd9;
+    border: 1px solid black;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.product-images_1_nutrition-info img {
+    width: 24px;
+}
+
+.product-images_1_nutrition-info span {
+    display: flex;
+    align-items: center;
+}
+
+.product-images_2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.product-images_3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.page-left_onlyDesktop {
+    width: 100%;
+}
+
+.page-left_onlyMobile {
+    display: none;
+}
+
+.product-review_total {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.product-review_total img {
+    width: 100%;
+    display: block;
+}
+
+.content-product_review p {
+    margin: 0;
+    line-height: 1.3em;
+    font-size: 16px;
+}
+
+.product-review_title {
+    font-size: 28px;
+    margin: 16px 0;
+    line-height: 1.4em;
+    font-family: Lora;
+    font-weight: 400;
+}
+
+.product-review_features_line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0;
+    /* max-height: 52.36px; */
+}
+
+.product-review_features_line img {
+    width: 53px;
+    min-width: 53px;
+    max-width: 53px;
+}
