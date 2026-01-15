@@ -51,3 +51,18 @@ body {
 li {
     list-style-type: none;
 }
+
+p {
+    margin: 0;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
