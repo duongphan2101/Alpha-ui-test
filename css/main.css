@@ -10,7 +10,7 @@
 }
 
 .main-content {
-    padding: 32px 0;
+    padding: 32px 0 0 0;
 }
 
 .main-content img,
@@ -226,6 +226,8 @@
     text-decoration-line: underline;
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
+
+    outline: none;
 }
 
 .clinicians-choice_center_theirreview {
@@ -318,8 +320,8 @@
 }
 
 .product-selector_bubble {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -328,8 +330,8 @@
 }
 
 .product-selector_bubble_inn {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     display: block !important;
 }
@@ -1743,4 +1745,112 @@
     border: 0;
     outline: 0;
     background: 0 0;
+}
+
+.product_faq_container {
+    max-width: 824px;
+    width: 760px;
+    margin: auto;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff, #f3eee0);
+    ;
+    overflow: hidden;
+    padding: 32px;
+}
+
+.product_faq-box {
+    padding: 20px 24px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
+.product_faq-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.product_faq-content {
+    padding-top: 16px;
+    display: none;
+}
+
+.product_faq-thumb p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
+.product_faq-thumb svg {
+    width: 16px;
+    transition: all .2s;
+}
+
+.product_expert-content {
+    padding: 32px;
+}
+
+.product_faq-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.product_stats-outer {
+    display: flex;
+    align-items: center;
+}
+
+.product_stats-outer>div:nth-child(1) {
+    width: 100%;
+}
+
+.product_stats-outer>div:nth-child(2) {
+    width: 70%;
+}
+
+.product_expert-content-img {
+    object-fit: contain !important;
+    aspect-ratio: 0 !important;
+    border-radius: 0 !important;
+    overflow: auto !important;
+}
+
+.product-text_text {
+    color: rgba(var(--color-foreground), 0.75);
+}
+
+.product_text-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+}
+
+.product_text-image>div {
+    width: 100%;
+}
+
+.product_text-image-reviews {
+    max-width: 350px;
+
+    object-fit: contain !important;
+    aspect-ratio: 0 !important;
+    border-radius: 0 !important;
+    overflow: auto !important;
+}
+
+.product-text p {
+    font-size: 18px;
+    line-height: 1.3em;
+    margin: 12px 0;
+}
+
+.product_text-image-points {
+    padding: 1px 0;
+}
+
+.product_text-image .btn_container {
+    max-width: 495px;
 }

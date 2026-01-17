@@ -1,3 +1,24 @@
+const selectorBlocks = document.querySelectorAll(".product-selector_block");
+const refillTexts = document.querySelectorAll(".product_atc-refills");
+
+selectorBlocks.forEach((block, index) => {
+    block.addEventListener("click", () => {
+        selectorBlocks.forEach(b => b.classList.remove("active"));
+
+        block.classList.add("active");
+
+        const targetData = (index + 1).toString();
+
+        refillTexts.forEach(text => {
+            if (text.getAttribute("data") === targetData) {
+                text.classList.remove("hided");
+            } else {
+                text.classList.add("hided");
+            }
+        });
+    });
+});
+
 function toggleHeight(el, isOpen, duration = 600) {
     el.style.overflow = "hidden";
 
@@ -33,6 +54,20 @@ function toggleHeight(el, isOpen, duration = 600) {
     }
 }
 
+document.querySelectorAll(".product_faq-box").forEach(tab => {
+    tab.addEventListener("click", () => {
+        const content = tab.querySelector(".product_faq-content");
+        const icon = tab.querySelector(".faq-thum_arrow");
+
+        const isOpen = tab.classList.contains("active");
+
+        tab.classList.toggle("active");
+        toggleHeight(content, isOpen);
+
+        icon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+    });
+});
+
 document.querySelectorAll(".product_tab-block").forEach(tab => {
     tab.addEventListener("click", () => {
         const content = tab.querySelector(".product_tab-content");
@@ -44,7 +79,6 @@ document.querySelectorAll(".product_tab-block").forEach(tab => {
         toggleHeight(content, isOpen);
 
         icon.style.transform = isOpen ? "rotate(0deg)" : "rotate(45deg)";
-        icon2.style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
     });
 });
 
@@ -66,21 +100,20 @@ const slides = Array.from(document.querySelectorAll('.slick-slide'));
 const nextBtn = document.querySelector('.product_carousel-next');
 const prevBtn = document.querySelector('.product_carousel-prev');
 const dots = document.querySelectorAll('.slick-dots li');
-const progressBar = document.querySelector('.product_ugc-progress-bar'); // Nếu bạn có thanh màu xanh
+const progressBar = document.querySelector('.product_ugc-progress-bar');
 
 let currentIndex = 0;
-const itemWidth = 310; // Chiều rộng mỗi item
+const itemWidth = 310;
 
 function updateCarousel() {
-    const visibleWidth = list.offsetWidth; 
+    const visibleWidth = list.offsetWidth;
     const totalWidth = slides.length * itemWidth - 620;
     const maxScroll = totalWidth - visibleWidth;
-    
-    // 1. Tính toán điểm dừng tối đa chính xác theo pixel
+
     let moveDistance = currentIndex * itemWidth;
 
     if (moveDistance >= maxScroll) {
-        moveDistance = maxScroll; // Hít vào lề phải
+        moveDistance = maxScroll;
         nextBtn.style.pointerEvents = "none";
     } else {
         nextBtn.style.pointerEvents = "auto";
@@ -94,11 +127,9 @@ function updateCarousel() {
         prevBtn.style.pointerEvents = "auto";
     }
 
-    // 2. Thực hiện trượt track
     track.style.transition = "transform 0.5s ease-in-out";
     track.style.transform = `translate3d(-${moveDistance}px, 0px, 0px)`;
 
-    // 3. ACTIVE LI (DOTS): Xóa hết active cũ, thêm active vào index hiện tại
     dots.forEach((dot, index) => {
         if (index === currentIndex) {
             dot.classList.add('slick-active');
@@ -111,16 +142,13 @@ function updateCarousel() {
         }
     });
 
-    // 4. CẬP NHẬT PROGRESS BAR (Nếu dùng)
     if (progressBar) {
         const progressPercent = ((moveDistance + visibleWidth) / totalWidth) * 100;
         progressBar.style.width = `${progressPercent}%`;
     }
 }
 
-// Click nút Next
 nextBtn.addEventListener('click', () => {
-    // Chỉ tăng index nếu khoảng cách hiện tại chưa chạm mép phải
     const maxScroll = (slides.length * itemWidth) - list.offsetWidth;
     if (currentIndex * itemWidth < maxScroll) {
         currentIndex++;
@@ -138,7 +166,6 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
-// Click trực tiếp vào các số (Dots)
 dots.forEach((dot, index) => {
     dot.addEventListener('click', () => {
         currentIndex = index;
@@ -147,7 +174,6 @@ dots.forEach((dot, index) => {
     });
 });
 
-// Các hàm bổ trợ Video
 function stopAllVideos() {
     document.querySelectorAll('video').forEach(v => {
         v.pause();
@@ -157,7 +183,7 @@ function stopAllVideos() {
 }
 
 document.querySelectorAll('.product_ugc-video').forEach(container => {
-    container.addEventListener('click', function() {
+    container.addEventListener('click', function () {
         const video = this.querySelector('video');
         const icon = this.querySelector('.product_ugc-play');
         if (video.paused) {
@@ -170,6 +196,13 @@ document.querySelectorAll('.product_ugc-video').forEach(container => {
     });
 });
 
-// Khởi tạo lần đầu
 updateCarousel();
 window.addEventListener('resize', updateCarousel);
+
+const btnAdd = document.querySelector('.product-selector_atc');
+
+btnAdd.addEventListener('click', function () {
+    alert("Đã thêm vào giỏ hàng!");
+});
+
+
