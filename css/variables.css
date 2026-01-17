@@ -172,3 +172,33 @@ h5,
         flex-direction: row-reverse;
     }
 }
+
+@media only screen and (min-width: 992px) {
+    .widget-review_summary {
+        width: 30%;
+    }
+
+    .widget-review_histogram {
+        width: 40%;
+    }
+
+    .widget-actions_button {
+        width: 30%;
+    }
+}
+
+/* Layout Mobile */
+@media (max-width: 768px) {
+    .widget-review-sanbox {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .widget-review_histogram {
+        min-width: 100%;
+    }
+}
+
+.jdgm-rev-widg__summary .jdgm-star {
+    font-size: 16px;
+}

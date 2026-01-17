@@ -1,4 +1,4 @@
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
@@ -16,6 +16,8 @@ body {
     font-family: var(--font-body-family);
     font-style: var(--font-body-style);
     font-weight: var(--font-body-weight);
+
+    color: rgba(var(--color-foreground), 0.75);
 }
 
 .content-page {
@@ -31,12 +33,6 @@ body {
 .content span {
     font-family: Montserrat;
 }
-
-.main-content img,
-.content img {
-    width: 100%;
-}
-
 /* .main-content img {
     object-fit: cover;
     aspect-ratio: 1;
