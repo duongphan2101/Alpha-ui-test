@@ -754,9 +754,9 @@
     padding: 56px 0;
 }
 
-.pli-gip {
+/* .pli-gip {
     padding: 0 !important;
-}
+} */
 
 .product_judge-container {
     max-width: 800px;
@@ -1048,6 +1048,11 @@
 
 .product_lymphg-ingr-outer {
     background: #f3eee0;
+    padding: 56px 0;
+}
+
+.product-re {
+    padding: 56px 0;
 }
 
 .product_lymph-ingr-table {
