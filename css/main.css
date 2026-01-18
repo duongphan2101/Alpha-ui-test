@@ -1986,6 +1986,22 @@
         padding: 8px 12px;
         font-size: 12px;
     }
+
+    .slick-prev {
+        left: 24px;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: block !important;
+    }
+
+    .slick-next {
+        right: 24px;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: block !important;
+    }
 }
 
 @media (max-width: 768px) {
