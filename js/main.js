@@ -205,4 +205,28 @@ btnAdd.addEventListener('click', function () {
     alert("Đã thêm vào giỏ hàng!");
 });
 
+$(document).ready(function () {
+    $('.main_product-image-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        infinite: true,
+        arrows: true, // Phải để là true
+        prevArrow: $('.slick-prev'), // Nhận diện nút prev trong HTML
+        nextArrow: $('.slick-next'), // Nhận diện nút next trong HTML
+        asNavFor: '.main_product-image-carousel_thumbs'
+    });
+
+    // Khởi tạo slider thumbnail
+    $('.main_product-image-carousel_thumbs').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.main_product-image-carousel',
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true,
+        infinite: true,
+        arrows: false
+    });
+});
 

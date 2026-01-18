@@ -31,7 +31,7 @@
 }
 
 .content-page_container {
-    width: 1240px;
+    width: 100%;
     display: flex;
     gap: 64px;
 }
@@ -73,6 +73,7 @@
     border-radius: 24px;
     cursor: pointer;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 .product-images_1_nutrition-info img {
@@ -122,6 +123,15 @@
     margin-bottom: 16px;
 }
 
+.product-review_total_imgStar {
+    width: 100px;
+    height: 18px;
+    object-fit: contain !important;
+    aspect-ratio: 0 !important;
+    border-radius: 0 !important;
+    overflow: auto !important;
+}
+
 .product-review_total img {
     width: 100%;
     display: block;
@@ -149,11 +159,21 @@
     /* max-height: 52.36px; */
 }
 
-.product-review_features_line img {
+.product-review_features_line>div:nth-child(1) {
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.product-review_features_line>div:nth-child(2) {
+    width: 100%;
+}
+
+/* .product-review_features_line img {
     width: 53px;
     min-width: 53px;
     max-width: 53px;
-}
+} */
 
 .clinicians-choice {
     font-family: 'Open sans', serif;
@@ -161,7 +181,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 387px;
+    width: 387px !important;
     padding: 8px 0px 10px 8px;
     padding-right: 10px;
     gap: 10px;
@@ -174,6 +194,12 @@
     justify-content: center;
     align-items: center;
     gap: 4px;
+}
+
+.clinicians-choice_logo>span>svg,
+.clinicians-choice_logo>span {
+    height: 40px;
+    width: auto;
 }
 
 .clinicians-choice_logo p {
@@ -725,7 +751,11 @@
 }
 
 .product-judge_outer {
-    padding-top: 56px;
+    padding: 56px 0;
+}
+
+.pli-gip {
+    padding: 0 !important;
 }
 
 .product_judge-container {
@@ -1528,6 +1558,10 @@
     margin-top: 24px;
 }
 
+.product_primary-btn:hover {
+    opacity: .7;
+}
+
 .product_primary-btn {
     font-family: Nunito;
     display: inline-block;
@@ -1622,9 +1656,9 @@
     padding: 8px;
 }
 
-.slick-initialized .slick-slide {
+/* .slick-initialized .slick-slide {
     display: block;
-}
+} */
 
 .slick-slide {
     display: none;
@@ -1749,13 +1783,14 @@
 
 .product_faq_container {
     max-width: 824px;
-    width: 760px;
+    /* width: 760px; */
     margin: auto;
     border-radius: 16px;
     background: linear-gradient(180deg, #fff, #f3eee0);
-    ;
     overflow: hidden;
     padding: 32px;
+
+    box-sizing: border-box;
 }
 
 .product_faq-box {
@@ -1853,4 +1888,364 @@
 
 .product_text-image .btn_container {
     max-width: 495px;
+}
+
+.slick-next,
+.slick-prev {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: 0;
+    background: 0 0;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .content-page_container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .content-page {
+        padding: 0 16px;
+    }
+
+    .page-left_onlyDesktop {
+        display: none;
+    }
+
+    .product-images_2,
+    .product-images_3 {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .clinicians-choice {
+        width: 100%;
+        /* flex-wrap: wrap;
+        max-height: none; */
+    }
+
+    .product_lymph-ingr-table {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product_why-bloating-grid {
+        flex-direction: column;
+    }
+
+    .product_primary-btn {
+        width: 100%;
+        padding: 18px 20px;
+    }
+
+    .product_expert-outer,
+    .product_stats-outer,
+    .product_text-image {
+        flex-direction: column;
+    }
+
+    .product_expert-content {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .content-page_container {
+        gap: 20px;
+    }
+
+    .product-images_1_nutrition-info {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-left_onlyMobile {
+        display: block !important;
+        width: 100%;
+        /* margin-bottom: 24px; */
+    }
+
+    .main_product-image-box {
+        position: relative;
+        outline: none;
+    }
+
+    .main_product-image-box img {
+        width: 100%;
+        border-radius: 8px;
+        display: block;
+    }
+
+    .main_product-image-box {
+        position: relative !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .main_product-nutrition-info {
+        position: absolute;
+        bottom: 32px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        line-height: 1.2em;
+        max-width: 290px;
+        padding: 8px 24px;
+        background: #ffffffd9;
+        border: 1px solid black;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .main_product-nutrition-info span {
+        display: flex;
+        align-items: center;
+    }
+
+    .main_product-nutrition-info img {
+        width: 24px !important;
+        height: auto;
+    }
+
+    /* Badge Sale góc phải */
+    .main-producT_bf_badge {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 80px !important;
+        z-index: 2;
+    }
+
+    /* Khoảng cách ảnh thumbnail */
+    .main_product-image-carousel_thumbs {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .main_product-image-carousel_thumbs .main_product-image-box {
+        padding: 0 4px;
+    }
+}
+
+@media only screen and (max-width: 678px) {
+    .slick-prev {
+        left: 24px;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: block !important;
+    }
+
+    .slick-next {
+        right: 24px;
+        z-index: 2;
+        width: 32px;
+        height: 32px;
+        display: block !important;
+    }
+
+    .product-review_total_imgStar {
+        width: 60px !important;
+        max-width: 60px !important;
+        min-width: 60px !important;
+        height: auto !important;
+        object-fit: contain !important;
+        aspect-ratio: 0 !important;
+        border-radius: 0 !important;
+        overflow: auto !important;
+    }
+
+    .product-review_total p {
+        font-size: 12px;
+        color: #000000;
+    }
+
+    .product-review_title {
+        font-size: 22px;
+    }
+
+    .Desktop_only {
+        display: none !important;
+    }
+
+    .product_tab-content_ul li {
+        font-size: 15px;
+    }
+
+    .title_wrap {
+        font-size: 18px;
+    }
+
+    .press_logo {
+        max-height: 20px;
+        margin: 0 25px;
+    }
+
+    .product-section_title {
+        font-size: 24px;
+    }
+
+    .product-section_text {
+        font-size: 16px;
+        color: #000;
+    }
+
+    .product_why-bloating-grid {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .product_why-bloating-cell {
+        display: flex;
+    }
+
+    .product_why-bloating-cell>div {
+        width: 100%;
+    }
+
+    .product_why-bloating-cell div img {
+        min-height: auto;
+    }
+
+    .product_why-note-img img {
+        max-width: 420px;
+    }
+
+    .product_arrow-img {
+        display: block;
+        width: 100%;
+        max-width: 34px;
+        margin: 16px auto;
+    }
+
+    .pli_flex {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .pli_top-text *,
+    .pli_pink-text *,
+    .pli_bottom-text * {
+        font-size: 16px;
+    }
+
+    .pli_pink-text {
+        margin: 12px 0;
+    }
+
+    .product-judge_outer,
+    .product_judge-outer {
+        padding: 32px 0 !important;
+    }
+
+    .pli-gip {
+        padding: 0 !important;
+    }
+
+    .product_lymph-ingr-table {
+        grid-template-columns: 1fr;
+    }
+
+    .product-lymph-ingredient {
+        padding: 16px;
+    }
+
+    .product_judge-outer.product_lymphg-ingr-outer img.product_lymph-main-img {
+        margin: 0;
+        max-width: 100% !important;
+    }
+
+    .product_lymph-ingr-thumb>div:nth-child(1) {
+        width: 20%;
+    }
+
+    .product_lymph-ingr-thumb>div:nth-child(2) {
+        width: 70%;
+    }
+
+    .product_lymph-ingr-thumb h5 {
+        font-size: 14px;
+    }
+
+    .product_lymph-ingr-thumb>div:nth-child(3) {
+        width: 10%;
+    }
+
+    .widget-review_histogram {
+        border: none;
+    }
+
+    .widget-actions_button a {
+        width: 100%;
+    }
+
+    .widget-review {
+        padding: 0;
+    }
+
+    .product_icons-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product_expert-outer {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .product_expert-content {
+        padding: 16px;
+    }
+
+    .product_primary-btn {
+        display: block;
+        padding: 16px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .product_faq_container {
+        padding: 16px;
+    }
+
+    .product_stats-outer {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .product_expert-content img{
+        object-fit: contain !important;
+        aspect-ratio: 0 !important;
+        border-radius: 0 !important;
+        overflow: auto !important;
+    }
+
+        .product_text-image-reviews {
+        max-width: 250px;
+        margin: auto;
+        display: block;
+    }
+
 }
